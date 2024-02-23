@@ -8,7 +8,7 @@ const isDev = app.settings.env === 'development'
 const URL = isDev ? 'http://localhost:3000' : 'https://digital-sketching-tool.vercel.app'
 app.use(cors({origin:URL}))
 const httpServer = createServer(app);
-const io = new Server(httpServer, { cors: URL });
+const io = new Server(httpServer, { cors:URL });
 
 io.on("connection", (socket) => {
 console.log("server connected")
